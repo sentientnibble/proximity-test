@@ -1,6 +1,6 @@
 {
   "name": "proximity-test",
-  "homepage": "https://sentientnibble.github.io/proximity-test",
+  "homepage": "http://sentientnibble.github.io/proximity-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
