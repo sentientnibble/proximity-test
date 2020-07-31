@@ -12,33 +12,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `Third party libraries`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Going forward, I will try to justify all the third party library choices that I made**
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- (Date-fns)
+  It contains the time duration to word function and allows for code splitting and has a smaller code footprint, I find it really useful and have used this 2-3 times before for similar requirements.
+- (Lodash uniqueby and round)
+  Similar reasons. The uniqueby function's source code is really cleverly written and simplifies the logic of merging old socket data with new data and maintains readability, if we had to roll our own, we would probably write it similarly
+- (React-flip-toolkit)
+  This was just for fun as the data was shuffling and it was a really good good opportunity to use that. I have checked some of their source code. They are consistent with their use of requestAnimationFrame, so it's really performant atleast for the scope of our items
+- (React-super-responsive-table)
+  This is a slick library that manages resizing your tables without writing any spaghetti code. We still have the control of the css if we need it, worked out really well for our usecase and is pretty meagre in size after gzipping.

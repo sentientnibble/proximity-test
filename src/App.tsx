@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import useWebsocket from "./hooks/useWebsocket";
+import HeroSection from "./components/HeroSection";
+import StockTable from "./components/StockTable";
 
 function App() {
+  const [isPaused, setPaused] = useState(false);
+  const data = useWebsocket("ws://stocks.mnet.website/", isPaused);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative bg-gray-50">
+      <HeroSection setPaused={setPaused} isPaused={isPaused} />
+      <StockTable data={data} />
     </div>
   );
 }

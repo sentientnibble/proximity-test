@@ -10,13 +10,20 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "date-fns": "^2.15.0",
+    "lodash.round": "^4.0.4",
+    "lodash.unionby": "^4.8.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-flip-toolkit": "^7.0.12",
     "react-scripts": "3.4.1",
+    "react-super-responsive-table": "^5.1.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "build:css": "postcss src/styles/base.scss -o src/styles/index.css",
+    "watch:css": "postcss src/styles/base.scss -o src/styles/index.css -w",
+    "start": "npm run watch:css & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -35,5 +42,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/lodash.round": "^4.0.6",
+    "@types/lodash.unionby": "^4.8.6",
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.1",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.3",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.6.0"
+  },
+  "resolve": {
+    "alias": {
+      "interface": "src/interface",
+      "styles": "src/styles"
+    }
   }
 }

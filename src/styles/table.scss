@@ -1,0 +1,23 @@
+.table-container {
+  @apply flex flex-col my-8 mx-auto;
+  width: 90%;
+}
+
+.table-container-main {
+  @apply align-middle inline-block min-w-full shadow overflow-hidden  border-b border-gray-200;
+}
+
+.table-row-icon {
+  @apply h-5 w-5 inline-block ml-10;
+}
+.stock-price {
+  @apply w-10 inline-block;
+}
+@media (max-width: 640px) {
+  .stock-price {
+    width: 3.5rem;
+  }
+  .table-row-icon {
+    @apply ml-5;
+  }
+}
